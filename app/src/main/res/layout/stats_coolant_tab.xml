@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:divider="@drawable/divider"
+    android:showDividers="middle">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.4"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:layout_gravity="center_vertical"
+        android:divider="@drawable/divider_vertical"
+        android:showDividers="middle">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1.15"
+            android:layout_height="match_parent"
+            android:paddingTop="3dp"
+            android:orientation="vertical"
+            android:gravity="top">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/total_coolant_lost_header"
+                android:textSize="@dimen/font_size_statistics_header"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textColor="@color/TextPrimary" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="center">
+
+                <TextView
+                    android:id="@+id/textview_total_fluids"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/font_size_total_oil_lost_amount"
+                    android:textColor="@color/ColorPrimary"
+                    android:textStyle="bold"
+                    android:gravity="left"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/total_lost_subheader"
+                    android:textSize="@dimen/font_size_statistics_sub_text"
+                    android:gravity="left"
+                    android:textColor="@color/TextSecondary" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:paddingTop="3dp"
+            android:orientation="vertical"
+            android:gravity="top">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="5dp"
+                android:text="@string/coolant_amount_header"
+                android:textSize="@dimen/font_size_statistics_header"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textColor="@color/TextPrimary" />
+
+            <com.minnloft.checkmyfluids.PieGraph
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/graph"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.7"
+        android:paddingTop="8dp"
+        android:gravity="top">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/projected_coolant_header"
+            android:textSize="@dimen/font_size_statistics_header"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textColor="@color/TextPrimary" />
+
+        <LinearLayout
+            android:id="@+id/projected_usage_not_enough"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="20dp"
+            android:paddingBottom="5dp"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="@string/not_enough_coolant_logs"
+                android:textSize="@dimen/font_size_statistics_sub_text"
+                android:textColor="@color/TextSecondary"
+                android:gravity="center" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/projected_usage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="@string/projected_miles_subheader"
+                    android:textSize="@dimen/font_size_statistics_header"
+                    android:textColor="@color/TextPrimary"
+                    android:gravity="center" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="@dimen/font_size_statistics_header"
+                    android:gravity="center" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="@string/projected_days_subheader"
+                    android:textColor="@color/TextPrimary"
+                    android:textSize="@dimen/font_size_statistics_header"
+                    android:gravity="center"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textview_miles_to_quarter"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/font_size_statistics_sub_text"
+                    android:gravity="center"
+                    android:textColor="@color/TextSecondary" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="@string/one_quarter"
+                    android:textSize="@dimen/font_size_statistics_sub_text"
+                    android:gravity="center"
+                    android:textColor="@color/TextSecondary" />
+
+                <TextView
+                    android:id="@+id/textview_days_to_quarter"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/font_size_statistics_sub_text"
+                    android:gravity="center"
+                    android:textColor="@color/TextSecondary" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textview_miles_to_half"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/font_size_statistics_sub_text"
+                    android:gravity="center"
+                    android:textColor="@color/TextSecondary" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="@string/one_half"
+                    android:textSize="@dimen/font_size_statistics_sub_text"
+                    android:gravity="center"
+                    android:textColor="@color/TextSecondary" />
+
+                <TextView
+                    android:id="@+id/textview_days_to_half"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/font_size_statistics_sub_text"
+                    android:gravity="center"
+                    android:textColor="@color/TextSecondary" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textview_miles_to_three_quarters"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/font_size_statistics_sub_text"
+                    android:gravity="center"
+                    android:textColor="@color/TextSecondary" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="@string/three_quarter"
+                    android:textSize="@dimen/font_size_statistics_sub_text"
+                    android:gravity="center"
+                    android:textColor="@color/TextSecondary" />
+
+                <TextView
+                    android:id="@+id/textview_days_to_three_quarters"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/font_size_statistics_sub_text"
+                    android:gravity="center"
+                    android:textColor="@color/TextSecondary" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textview_miles_to_one"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/font_size_statistics_sub_text"
+                    android:gravity="center"
+                    android:textColor="@color/TextSecondary"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="@string/one_quart"
+                    android:textSize="@dimen/font_size_statistics_sub_text"
+                    android:gravity="center"
+                    android:textColor="@color/TextSecondary"/>
+
+                <TextView
+                    android:id="@+id/textview_days_to_one"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/font_size_statistics_sub_text"
+                    android:gravity="center"
+                    android:textColor="@color/TextSecondary"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.2"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:gravity="top"
+        android:divider="@drawable/divider_vertical"
+        android:showDividers="middle">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:paddingTop="3dp"
+            android:orientation="vertical"
+            android:gravity="top">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/average_quarts_header"
+                android:textSize="@dimen/font_size_statistics_header"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textColor="@color/TextPrimary" />
+
+            <LinearLayout
+                android:id="@+id/average_quarts_not_enough"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="20dp"
+                android:paddingBottom="5dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="@string/not_enough_data"
+                    android:textSize="@dimen/font_size_statistics_sub_text"
+                    android:textColor="@color/TextSecondary"
+                    android:gravity="center" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/average_quarts"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="center">
+
+                <TextView
+                    android:id="@+id/textview_average_oil_month"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="5dp"
+                    android:textSize="@dimen/font_size_average_quarts_amount"
+                    android:textColor="@color/ColorPrimary"
+                    android:textStyle="bold"
+                    android:gravity="left"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/average_quarts_subheader"
+                    android:textSize="@dimen/font_size_statistics_sub_text"
+                    android:gravity="left"
+                    android:textColor="@color/TextSecondary" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:paddingTop="3dp"
+            android:orientation="vertical"
+            android:gravity="top">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/average_miles_header"
+                android:textSize="@dimen/font_size_statistics_header"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textColor="@color/TextPrimary" />
+
+            <LinearLayout
+                android:id="@+id/average_miles_not_enough"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="20dp"
+                android:paddingBottom="5dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="@string/not_enough_data"
+                    android:textSize="@dimen/font_size_statistics_sub_text"
+                    android:textColor="@color/TextSecondary"
+                    android:gravity="center" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/average_miles"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="center">
+
+                <TextView
+                    android:id="@+id/textview_average_miles_day"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="5dp"
+                    android:textSize="@dimen/font_size_average_miles_amount"
+                    android:textColor="@color/ColorPrimary"
+                    android:textStyle="bold"
+                    android:gravity="left"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/average_miles_subheader"
+                    android:textSize="@dimen/font_size_statistics_sub_text"
+                    android:gravity="left"
+                    android:textColor="@color/TextSecondary" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

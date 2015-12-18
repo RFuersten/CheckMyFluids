@@ -1,0 +1,65 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="@style/Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/ColorPrimary</item>
+        <item name="colorPrimaryDark">@color/ColorPrimaryDark</item>
+        <item name="android:windowBackground">@color/WindowBackground</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:alertDialogTheme">@style/AppCompatAlertDialogStyle</item>
+        <item name="android:listSeparatorTextViewStyle">@style/PreferenceListHeader</item>
+    </style>
+
+    <style name="AppCompatAlertDialogStyle" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorAccent">@color/ColorPrimary</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowMinWidthMajor">@android:dimen/dialog_min_width_major</item>
+        <item name="android:windowMinWidthMinor">@android:dimen/dialog_min_width_minor</item>
+    </style>
+
+    <style name="PreferenceListHeader">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">30dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/ColorPrimary</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:gravity">bottom</item>
+        <item name="android:paddingLeft">5sp</item>
+    </style>
+
+    <!-- Settings activity theme. -->
+    <style name="MainMenuTheme" parent="AppTheme">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <!-- Settings activity theme. -->
+    <style name="LogFluidsTheme" parent="AppTheme">
+        <item name="actionBarStyle">@style/ActivityActionBar</item>
+    </style>
+
+    <!-- Settings activity theme. -->
+    <style name="StatisticsTheme" parent="AppTheme">
+        <item name="actionBarStyle">@style/ActivityActionBar</item>
+    </style>
+
+    <!-- Settings activity theme. -->
+    <style name="SettingsTheme" parent="AppTheme">
+    </style>
+
+    <!-- Style for the Log Fluids and Statistics Action Bars -->
+    <style name="ActivityActionBar" parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <!-- Divider for Statistics page -->
+    <style name="Divider">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">?android:attr/listDivider</item>
+    </style>
+
+</resources>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="quarts">
+        <item>@string/pref_units_label_one_fourth</item>
+        <item>@string/pref_units_label_one_half</item>
+        <item>@string/pref_units_label_three_fourths</item>
+        <item>@string/pref_units_label_one_quart</item>
+    </string-array>
+
+    <string-array name="quart_amounts">
+        <item>@string/pref_units_one_fourth</item>
+        <item>@string/pref_units_one_half</item>
+        <item>@string/pref_units_three_fourths</item>
+        <item>@string/pref_units_one_quart</item>
+    </string-array>
+
+</resources>

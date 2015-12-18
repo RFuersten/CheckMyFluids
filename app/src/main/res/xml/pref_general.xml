@@ -1,0 +1,73 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:title="@string/title_set_notify_settings"
+        android:key="pref_key_coolant_settings">
+
+        <CheckBoxPreference
+            android:key="checkbox_check_notify"
+            android:title="@string/pref_title_set_notify"
+            android:summary="@string/pref_description_set_notify"
+            android:defaultValue="true" />
+
+        <com.minnloft.checkmyfluids.TimePreference
+            android:key="set_notify_time"
+            android:defaultValue="12:0"
+            android:dependency="checkbox_check_notify"/>
+
+        <com.minnloft.checkmyfluids.FrequencyPreference
+            android:key="notify_frequency"
+            android:defaultValue="7"
+            android:dependency="checkbox_check_notify"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/title_auto_notify_settings"
+        android:key="pref_key_oil_settings">
+
+         <CheckBoxPreference
+            android:key="checkbox_oil_auto_notify"
+            android:title="@string/pref_title_oil_auto_notify"
+            android:summary="@string/pref_description_oil_auto_notify"
+            android:defaultValue="false" />
+
+            <com.minnloft.checkmyfluids.TimePreference
+                android:key="auto_notify_oil_time"
+                android:defaultValue="12:0"
+                android:dependency="checkbox_oil_auto_notify"/>
+
+            <com.minnloft.checkmyfluids.AmountPreference
+                android:key="@string/oil_quart_amount_key"
+                android:defaultValue="@string/pref_units_one_half"
+                android:dependency="checkbox_oil_auto_notify"/>
+
+        <CheckBoxPreference
+            android:key="checkbox_coolant_auto_notify"
+            android:title="@string/pref_title_coolant_auto_notify"
+            android:summary="@string/pref_description_coolant_auto_notify"
+            android:defaultValue="false" />
+
+            <com.minnloft.checkmyfluids.TimePreference
+                android:key="auto_notify_coolant_time"
+                android:defaultValue="12:0"
+                android:dependency="checkbox_coolant_auto_notify"/>
+
+            <com.minnloft.checkmyfluids.AmountPreference
+                android:key="@string/coolant_quart_amount_key"
+                android:defaultValue="@string/pref_units_one_half"
+                android:dependency="checkbox_coolant_auto_notify"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="About">
+
+        <Preference
+            android:title="@string/app_name"
+            android:summary="@string/app_version">
+        </Preference>
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
