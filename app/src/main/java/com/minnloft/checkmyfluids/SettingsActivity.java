@@ -21,14 +21,12 @@ import android.support.v7.app.AppCompatActivity;
  */
 public class SettingsActivity extends AppCompatActivity {
 
-    //Using this to test extend AppCombatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getFragmentManager().beginTransaction().replace(android.R.id.content,
                 new SettingsActivityFragment()).commit();
 
-        getSupportActionBar().setElevation(0f);
     }
 
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN)

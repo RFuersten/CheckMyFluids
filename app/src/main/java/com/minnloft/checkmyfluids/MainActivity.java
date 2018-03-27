@@ -5,14 +5,20 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.support.v7.app.AppCompatDelegate;
+import android.view.View;
+import android.widget.LinearLayout;
 
 import com.minnloft.checkmyfluids.notifications.ReminderManager;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private SharedPreferences settings = null;
+    LinearLayout logFluidsButton, statisticsButton, settingsButton;
+    SharedPreferences settings = null;
+
+    static {
+        AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,28 +39,51 @@ public class MainActivity extends AppCompatActivity {
             settings.edit().putBoolean("app_first_time_started", false).apply();
         }
 
+        initializeViews();
+    }
+
+    private void initializeViews(){
+        logFluidsButton = (LinearLayout) findViewById(R.id.button_log_fluids);
+        logFluidsButton.setOnClickListener(this);
+        statisticsButton = (LinearLayout) findViewById(R.id.button_statistics);
+        statisticsButton.setOnClickListener(this);
+        settingsButton = (LinearLayout) findViewById(R.id.button_settings);
+        settingsButton.setOnClickListener(this);
     }
 
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            startActivity(new Intent(this, SettingsActivity.class));
-            return true;
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.button_log_fluids:
+                switchActivity(LogFluidsActivity.TAG);
+                break;
+            case R.id.button_statistics:
+                switchActivity(StatisticsActivity.TAG);
+                break;
+            case R.id.button_settings:
+                switchActivity(SettingsActivityFragment.TAG);
+                break;
         }
+    }
 
-        return super.onOptionsItemSelected(item);
+    //Switch activity based on what button they pressed
+    private void switchActivity(String tag){
+        Intent intent;
+
+        switch(tag) {
+            case LogFluidsActivity.TAG:
+                intent = new Intent(this, LogFluidsActivity.class);
+                startActivity(intent);
+                break;
+            case StatisticsActivity.TAG:
+                intent = new Intent(this, StatisticsActivity.class);
+                startActivity(intent);
+                break;
+            case SettingsActivityFragment.TAG:
+                intent = new Intent(this, SettingsActivity.class);
+                startActivity(intent);
+                break;
+        }
     }
 }

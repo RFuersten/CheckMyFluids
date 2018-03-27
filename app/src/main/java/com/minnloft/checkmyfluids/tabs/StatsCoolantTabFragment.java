@@ -24,6 +24,7 @@ public class StatsCoolantTabFragment extends Fragment {
     private DataSource mDataSource;
 
     TextView totalFluidsView;
+    PieGraph pg;
     TextView milesToQuarterView;
     TextView milesToHalfView;
     TextView milesToThreeQuartersView;
@@ -57,9 +58,30 @@ public class StatsCoolantTabFragment extends Fragment {
         mDataSource = new DataSource(getActivity());
         mDataSource.open();
 
-        int databaseLength = mDataSource.getLength(CoolantTable.TAG);
+        initializeViews(view);
 
+        calculateAndSetViews();
+
+        return view;
+    }
+
+    @Override
+    public void onResume() {
+        mDataSource.open();
+        super.onResume();
+    }
+
+    @Override
+    public void onPause() {
+        mDataSource.close();
+        super.onPause();
+    }
+
+    //Initialize all views needed for StatsCoolantTabFragment
+    private void initializeViews(View view){
         totalFluidsView = (TextView) view.findViewById(R.id.textview_total_fluids);
+        pg = (PieGraph) view.findViewById(R.id.graph);
+
         milesToQuarterView = (TextView) view.findViewById(R.id.textview_miles_to_quarter);
         milesToHalfView = (TextView) view.findViewById(R.id.textview_miles_to_half);
         milesToThreeQuartersView = (TextView) view.findViewById(R.id.textview_miles_to_three_quarters);
@@ -79,6 +101,12 @@ public class StatsCoolantTabFragment extends Fragment {
 
         averageQuartsNotEnough = (LinearLayout) view.findViewById(R.id.average_quarts_not_enough);
         averageQuarts = (LinearLayout) view.findViewById(R.id.average_quarts);
+    }
+
+    //Perform all necessary calculations to be able to set the views with the statistics results
+    //and then set the views with the results
+    private void calculateAndSetViews(){
+        int databaseLength = mDataSource.getLength(CoolantTable.TAG);
 
         String[] dates = mDataSource.getAllDates(CoolantTable.TAG);
         String[] amounts = mDataSource.getAllAmounts(CoolantTable.TAG);
@@ -140,13 +168,12 @@ public class StatsCoolantTabFragment extends Fragment {
             daysToOneView.setText(truncateResults(tempDays));
 
 
-            //Average Oil Burned per Month
+            //Average Coolant used per Month
             avgCoolant = Utility.calculateAverageFluidPerMonth(dates, amounts);
             averageCoolantMonthView.setText(truncateResults(avgCoolant));
 
             //Average Mile Driven per Day
             avgMiles = Utility.calculateAverageMilesPerDay(dates, miles);
-
 
             if(mDataSource.getLength(OilTable.TAG) > 1){
                 Double avgOilMiles = Utility.calculateAverageMilesPerDay(mDataSource.getAllDates(OilTable.TAG),
@@ -173,7 +200,6 @@ public class StatsCoolantTabFragment extends Fragment {
         int coolantLogAmount = mDataSource.getLength(CoolantTable.TAG);
         int totalLogAmount = oilLogAmount + coolantLogAmount;
 
-        PieGraph pg = (PieGraph) view.findViewById(R.id.graph);
         PieSlice slice;
 
         if (databaseLength >= 1) {
@@ -181,7 +207,7 @@ public class StatsCoolantTabFragment extends Fragment {
             pg.addData(coolantLogAmount, totalLogAmount);
 
             slice = new PieSlice();
-            slice.setColor(getResources().getColor(R.color.ColorPrimary));
+            slice.setColor(getResources().getColor(R.color.AccentColor));
             slice.setValue(coolantLogAmount);
             pg.addSlice(slice);
 
@@ -203,21 +229,8 @@ public class StatsCoolantTabFragment extends Fragment {
             slice.setValue(1);
             pg.addSlice(slice);
         }
-
-        return view;
     }
 
-    @Override
-    public void onResume() {
-        mDataSource.open();
-        super.onResume();
-    }
-
-    @Override
-    public void onPause() {
-        mDataSource.close();
-        super.onPause();
-    }
 
     private String truncateResults(double results) {
         DecimalFormat df = new DecimalFormat("0.00");

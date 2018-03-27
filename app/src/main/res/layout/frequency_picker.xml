@@ -25,6 +25,7 @@
         android:layout_marginBottom="15dp"
         android:gravity="center" >
 
+
         <NumberPicker
             android:id="@+id/frequency_number_picker"
             android:layout_width="wrap_content"
@@ -37,6 +38,7 @@
             android:textAppearance="?android:textAppearanceMedium"
             android:text="@string/dialog_frequency_picker_days"
             android:layout_gravity="center_vertical"/>
+
 
     </LinearLayout>
 

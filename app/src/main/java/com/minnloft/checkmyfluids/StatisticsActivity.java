@@ -11,6 +11,9 @@ import com.minnloft.checkmyfluids.tabs.SlidingTabLayout;
 import com.minnloft.checkmyfluids.tabs.ViewPagerAdapter;
 
 public class StatisticsActivity extends AppCompatActivity {
+
+    public static final String TAG = "SAT";
+
     ViewPager pager;
     ViewPagerAdapter adapter;
     SlidingTabLayout tabs;
@@ -48,14 +51,13 @@ public class StatisticsActivity extends AppCompatActivity {
         //Setting the ViewPager For the SlidingTabsLayout
         tabs.setViewPager(pager);
 
-        getSupportActionBar().setElevation(0f);
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         //Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_statistics, menu);
+        getMenuInflater().inflate(R.menu.menu_settings, menu);
         return true;
     }
 

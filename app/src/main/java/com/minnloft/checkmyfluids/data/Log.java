@@ -1,20 +1,33 @@
 package com.minnloft.checkmyfluids.data;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 /**
  * Created by Ryan on 9/27/2015.
  */
-public class Log {
+public class Log implements Parcelable{
 
     private long mId;
     private String mDate;
     private String mAmount;
     private String mMiles;
 
-    public void Log(long mId, String mDate, String mAmount, String mMiles){
+    public Log(){
+    }
+
+    public Log(long mId, String mDate, String mAmount, String mMiles){
         this.mId = mId;
         this.mDate = mDate;
         this.mAmount = mAmount;
         this.mMiles = mMiles;
+    }
+
+    public Log(Parcel in) {
+        mId = in.readLong();
+        mDate = in.readString();
+        mAmount = in.readString();
+        mMiles = in.readString();
     }
 
     public long getmId() {
@@ -185,6 +198,7 @@ public class Log {
     public String getmMiles() {
         return mMiles;
     }
+
     public void setmMiles(String mMiles) {
         this.mMiles = mMiles;
     }
@@ -193,5 +207,33 @@ public class Log {
     public String toString(){
         return mDate+" "+mAmount+" "+mMiles;
     }
+
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeLong(mId);
+        dest.writeString(mDate);
+        dest.writeString(mAmount);
+        dest.writeString(mMiles);
+    }
+
+    @SuppressWarnings("unused")
+    public static final Parcelable.Creator<Log> CREATOR = new Parcelable.Creator<Log>() {
+        @Override
+        public Log createFromParcel(Parcel in) {
+            return new Log(in);
+        }
+
+        @Override
+        public Log[] newArray(int size) {
+            return new Log[size];
+        }
+    };
+
 
 }

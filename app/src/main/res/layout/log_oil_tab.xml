@@ -1,137 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:divider="@drawable/divider"
     android:showDividers="middle">
 
+
     <LinearLayout
+        android:id="@+id/no_logs_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textview_no_logs"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:text="@string/no_oil_logs_entered"
+            android:textColor="@color/TextSecondary"
+            android:textSize="@dimen/font_size_statistics_sub_text"
+            android:gravity="center"/>
+
+        <ImageView
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            app:srcCompat="@drawable/divider"/>
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/oil_list"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:orientation="vertical"
-        android:gravity="top">
-
-        <LinearLayout
-            android:id="@+id/no_logs_view"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:visibility="gone"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/textview_no_logs"
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:text="@string/no_oil_logs_entered"
-                android:textColor="@color/TextSecondary"
-                android:textSize="@dimen/font_size_statistics_sub_text"
-                android:gravity="center"/>
-
-            <ImageView
-                android:id="@+id/divider"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:src="@drawable/divider"/>
-
-        </LinearLayout>
-
-        <ListView
-            android:id="@+id/oil_list"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:divider="@drawable/divider"
-            android:dividerHeight="1dp"
-            android:choiceMode="singleChoice"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <LinearLayout
-            android:id="@+id/button_oil_add"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="40dp"
-            android:clickable="true"
-            android:gravity="center"
-            android:background="@color/ColorPrimary" >
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:contentDescription="@string/logs_tab_add_button_icon_description"
-                android:src="@drawable/ic_add"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/logs_tab_add_button"
-                android:textStyle="bold"
-                android:textColor="@color/IconsAndTextHeaders"
-                android:paddingLeft="5dp"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/button_oil_edit"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="40dp"
-            android:clickable="true"
-            android:gravity="center"
-            android:background="@color/ColorPrimary" >
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:contentDescription="@string/logs_tab_edit_button_icon_description"
-                android:src="@drawable/ic_mode_edit"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/logs_tab_edit_button"
-                android:textStyle="bold"
-                android:textColor="@color/IconsAndTextHeaders"
-                android:paddingLeft="5dp"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/button_oil_delete"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="40dp"
-            android:clickable="true"
-            android:gravity="center"
-            android:background="@color/ColorPrimary" >
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:contentDescription="@string/logs_tab_delete_button_icon_description"
-                android:src="@drawable/ic_delete"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/logs_tab_delete_button"
-                android:textStyle="bold"
-                android:textColor="@color/IconsAndTextHeaders"
-                android:paddingLeft="5dp"/>
-
-        </LinearLayout>
-
-    </LinearLayout>
+        android:divider="@drawable/divider"
+        android:dividerHeight="1dp" />
 
 </LinearLayout>

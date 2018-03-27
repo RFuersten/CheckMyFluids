@@ -24,6 +24,8 @@ public class StatsOilTabFragment extends Fragment {
     private DataSource mDataSource;
 
     TextView totalFluidsView;
+    PieGraph pg;
+
     TextView milesToQuarterView;
     TextView milesToHalfView;
     TextView milesToThreeQuartersView;
@@ -57,9 +59,31 @@ public class StatsOilTabFragment extends Fragment {
         mDataSource = new DataSource(getActivity());
         mDataSource.open();
 
-        int databaseLength = mDataSource.getLength(OilTable.TAG);
+        initializeViews(view);
 
+        calculateAndSetViews();
+
+        return view;
+    }
+
+    @Override
+    public void onResume() {
+        mDataSource.open();
+        super.onResume();
+    }
+
+    @Override
+    public void onPause() {
+        mDataSource.close();
+        super.onPause();
+    }
+
+
+    //Initialize all views needed for StatsCoolantTabFragment
+    private void initializeViews(View view) {
         totalFluidsView = (TextView) view.findViewById(R.id.textview_total_fluids);
+        pg = (PieGraph) view.findViewById(R.id.graph);
+
         milesToQuarterView = (TextView) view.findViewById(R.id.textview_miles_to_quarter);
         milesToHalfView = (TextView) view.findViewById(R.id.textview_miles_to_half);
         milesToThreeQuartersView = (TextView) view.findViewById(R.id.textview_miles_to_three_quarters);
@@ -79,6 +103,12 @@ public class StatsOilTabFragment extends Fragment {
 
         averageQuartsNotEnough = (LinearLayout) view.findViewById(R.id.average_quarts_not_enough);
         averageQuarts = (LinearLayout) view.findViewById(R.id.average_quarts);
+    }
+
+    //Perform all necessary calculations to be able to set the views with the statistics results
+    //and then set the views with the results
+    private void calculateAndSetViews(){
+        int databaseLength = mDataSource.getLength(OilTable.TAG);
 
         String[] dates = mDataSource.getAllDates(OilTable.TAG);
         String[] amounts = mDataSource.getAllAmounts(OilTable.TAG);
@@ -89,7 +119,6 @@ public class StatsOilTabFragment extends Fragment {
         Double daysTotal;
         Double avgOil;
         Double avgMiles;
-
 
         //Perform calculations to get the data to set all the fields on the statistics page
 
@@ -170,14 +199,13 @@ public class StatsOilTabFragment extends Fragment {
         int coolantLogAmount = mDataSource.getLength(CoolantTable.TAG);
         int totalLogAmount = oilLogAmount + coolantLogAmount;
 
-        PieGraph pg = (PieGraph) view.findViewById(R.id.graph);
         PieSlice slice;
 
         if (databaseLength >= 1) {
             pg.addData(oilLogAmount, totalLogAmount);
 
             slice = new PieSlice();
-            slice.setColor(getResources().getColor(R.color.ColorPrimary));
+            slice.setColor(getResources().getColor(R.color.AccentColor));
             slice.setValue(oilLogAmount);
             pg.addSlice(slice);
 
@@ -199,20 +227,6 @@ public class StatsOilTabFragment extends Fragment {
             slice.setValue(1);
             pg.addSlice(slice);
         }
-
-        return view;
-    }
-
-    @Override
-    public void onResume() {
-        mDataSource.open();
-        super.onResume();
-    }
-
-    @Override
-    public void onPause() {
-        mDataSource.close();
-        super.onPause();
     }
 
     private String truncateResults(double results) {

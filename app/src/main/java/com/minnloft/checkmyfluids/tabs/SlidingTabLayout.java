@@ -208,7 +208,6 @@ public class SlidingTabLayout extends HorizontalScrollView {
                 tabTitleView = (TextView) tabView.findViewById(mTabViewTextViewId);
 
                 tabImageView = (ImageView) tabView.findViewById(mTabViewImageId);
-
             }
 
             if (tabView == null) {
@@ -231,6 +230,7 @@ public class SlidingTabLayout extends HorizontalScrollView {
 
             tabTitleView.setText(adapter.getPageTitle(i));
 
+            //tabImageView.setImageResource(adapter.getImageId(i));
             tabImageView.setImageDrawable(getResources().getDrawable(adapter.getImageId(i)));
             if (mViewPager.getCurrentItem() == i) {
                 tabImageView.setSelected(true);

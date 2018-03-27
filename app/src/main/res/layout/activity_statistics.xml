@@ -1,7 +1,18 @@
-<fragment xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/fragment_statistics"
-    android:name="com.minnloft.checkmyfluids.StatisticsActivityFragment"
-    tools:layout="@layout/fragment_statistics"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" />
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.minnloft.checkmyfluids.tabs.SlidingTabLayout
+        android:id="@+id/stats_tabs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/ColorPrimary"/>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/stats_pager"
+        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:layout_weight="1" />
+
+</LinearLayout>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:viewportWidth="48"
+    android:viewportHeight="48"
+    android:width="24dp"
+    android:height="24dp">
+    <path
+        android:pathData="M41.27273 24A17.272728 16.947735 0 0 1 24.000002 40.947735 17.272728 16.947735 0 0 1 6.7272739 24 17.272728 16.947735 0 0 1 24.000002 7.0522652 17.272728 16.947735 0 0 1 41.27273 24Z"
+        android:strokeWidth="4"
+        android:strokeColor="@color/AccentColor" />
+    <path
+        android:pathData="M37.40909 24.000002A13.40909 13.40909 0 0 1 24 37.409092 13.40909 13.40909 0 0 1 10.59091 24.000002 13.40909 13.40909 0 0 1 24 10.590912 13.40909 13.40909 0 0 1 37.40909 24.000002Z"
+        android:fillColor="@color/AccentColor" />
+    <path
+        android:pathData="M23.999998 3l0 3.7604742"
+        android:strokeWidth="10"
+        android:strokeColor="@color/AccentColor" />
+    <path
+        android:pathData="M24.000002 42l0 3.999996"
+        android:strokeWidth="10"
+        android:strokeColor="@color/AccentColor" />
+    <path
+        android:pathData="M24.000002 2.000005l0 3.760474"
+        android:strokeWidth="10"
+        android:strokeColor="@color/AccentColor" />
+    <group
+        android:rotation="60"
+        android:translateX="32.77045"
+        android:translateY="-29.21163">
+        <path
+            android:pathData="M41.683235 11.515108l0 4.51824"
+            android:strokeWidth="10"
+            android:strokeColor="@color/AccentColor" />
+    </group>
+    <group
+        android:rotation="-60"
+        android:scaleX="-1"
+        android:scaleY="-1"
+        android:translateX="92.14567"
+        android:translateY="15.91137">
+        <path
+            android:pathData="M41.479618 32.140476l0 4.830742"
+            android:strokeWidth="10"
+            android:strokeColor="@color/AccentColor" />
+    </group>
+    <group
+        android:rotation="60"
+        android:scaleX="-1"
+        android:scaleY="-1"
+        android:translateX="-20.4001"
+        android:translateY="57.27148">
+        <path
+            android:pathData="M6.3328042 32.194748l0 4.659988"
+            android:strokeWidth="10"
+            android:strokeColor="@color/AccentColor" />
+    </group>
+    <group
+        android:rotation="-60"
+        android:translateX="-8.920926"
+        android:translateY="12.38412">
+        <path
+            android:pathData="M6.2644992 11.587815l0 4.659988"
+            android:strokeWidth="10"
+            android:strokeColor="@color/AccentColor" />
+    </group>
+</vector>

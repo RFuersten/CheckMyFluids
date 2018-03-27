@@ -1,15 +1,16 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 23
-    buildToolsVersion "23.0.1"
+    compileSdkVersion 24
+    buildToolsVersion "26.0.2"
 
     defaultConfig {
         applicationId "com.minnloft.checkmyfluids"
         minSdkVersion 15
         targetSdkVersion 23
-        versionCode 1
-        versionName "1.0"
+        versionCode 2
+        versionName "2.0.0"
+        vectorDrawables.useSupportLibrary = true
     }
     buildTypes {
         release {
@@ -20,7 +21,13 @@ android {
 }
 
 dependencies {
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:23.0.0'
-    compile 'com.android.support:support-v4:23.0.0'
+    compile 'com.android.support:appcompat-v7:24.2.1'
+    compile 'com.android.support:support-v4:24.2.1'
+    compile "com.android.support:design:24.2.1"
+    //https://github.com/wdullaer/MaterialDateTimePicker
+    compile ('com.wdullaer:materialdatetimepicker:3.5.1') {
+        exclude group: 'com.android.support'
+    }
 }

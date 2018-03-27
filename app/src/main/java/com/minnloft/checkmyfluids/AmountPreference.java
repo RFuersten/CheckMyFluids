@@ -65,7 +65,7 @@ public class AmountPreference extends DialogPreference{
                     listItem.setBackgroundColor(Color.TRANSPARENT);
                 }
 
-                view.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.ColorPrimaryLight));
+                view.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.NotifyAmountSelector));
 
             }
 
@@ -99,7 +99,7 @@ public class AmountPreference extends DialogPreference{
 
                 View defaultview = list.getChildAt(i);
 
-                defaultview.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.ColorPrimaryLight));
+                defaultview.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.NotifyAmountSelector));
             }
         });
 

@@ -3,7 +3,11 @@
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="70dp"
-    android:background="@drawable/list_item_selector">
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingStart="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingEnd="@dimen/activity_horizontal_margin"
+    android:background="?selectableItemBackground">
 
     <LinearLayout
         android:layout_width="0dp"
@@ -62,7 +66,7 @@
                 android:id="@+id/textview_amount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/ColorPrimary"
+                android:textColor="@color/TextSecondary"
                 android:textSize="@dimen/font_size_list_item_header"
                 android:textStyle="bold"
                 android:gravity="center" />

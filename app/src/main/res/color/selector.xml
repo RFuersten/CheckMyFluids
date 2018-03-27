@@ -4,5 +4,5 @@
     <item android:state_selected="true" android:color="@color/IconsAndTextHeaders" />
     <item android:state_focused="true" android:color="@color/IconsAndTextHeaders" />
     <item android:state_pressed="true" android:color="@color/IconsAndTextHeaders" />
-    <item android:color="@color/ColorPrimaryDark" />
+    <item android:color="@color/IconsAndTextHeaders" />
 </selector>

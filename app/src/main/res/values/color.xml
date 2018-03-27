@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <color name="ColorPrimary">#009688</color>
-    <color name="ColorPrimaryDark">#00796B</color>
-    <color name="ColorPrimaryLight">#B2DFDB</color>
+    <color name="ColorPrimary">#333F50</color>
+    <color name="ColorPrimaryDark">#1F2D41</color>
+    <color name="ColorPrimaryLight">#4A586C</color>
     <color name="IconsAndTextHeaders">#FFFFFF</color>
     <color name="TextPrimary">#212121</color>
     <color name="TextSecondary">#727272</color>
-    <color name="AccentColor">#9E9E9E</color>
+    <color name="AccentColor">#FF5A1D</color>
     <color name="DividerColor">#B6B6B6</color>
+    <color name="NotifyAmountSelector">#80FF5A1D</color>
     <color name="WindowBackground">#EFEFEF</color>
-    <color name="tabsScrollColor">#009688</color>
+    <color name="tabsScrollColor">#FF5A1D</color>
     <color name="LogsHeaderBackground">@color/WindowBackground</color>
     <color name="LogsHeaderTextColor">@color/TextPrimary</color>
 

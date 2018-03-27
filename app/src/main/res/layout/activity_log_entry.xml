@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
+        android:orientation="vertical"
+        android:layout_alignParentTop="true">
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/textinputlayout_miles"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:hint="@string/mileage_input_hint">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/edittext_add_miles"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLength="7"
+                android:inputType="number" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/TextPrimary"
+            android:layout_marginBottom="16dp"
+            android:text="@string/mileage_input_description"/>
+
+
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/textinputlayout_amount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:hint="@string/amount_input_hint">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/edittext_add_amount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLength="4"
+                android:inputType="numberDecimal" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/TextPrimary"
+            android:layout_marginBottom="16dp"
+            android:text="@string/amount_input_description"/>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/textinputlayout_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:hint="@string/date_input_hint">
+
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/edittext_add_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/TextSecondary"
+                android:focusable="false"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/TextPrimary"
+            android:layout_marginBottom="16dp"
+            android:text="@string/date_input_description"/>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button_log_entry"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/ColorPrimary"
+        android:textColor="@color/IconsAndTextHeaders"
+        android:textStyle="bold"
+        android:layout_alignParentBottom="true"/>
+
+
+</RelativeLayout>

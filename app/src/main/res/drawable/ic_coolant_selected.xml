@@ -1,0 +1,33 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+
+    <path
+        android:strokeColor="@color/AccentColor"
+        android:strokeWidth="4"
+        android:pathData="M24,8 C32.8366,8,40,15.1634,40,24 C40,32.8366,32.8366,40,24,40
+C15.1634,40,8,32.8366,8,24 C8,15.1634,15.1634,8,24,8 Z" />
+    <path
+        android:fillColor="@color/AccentColor"
+        android:pathData="M24,12 C30.6274,12,36,17.3726,36,24 C36,30.6274,30.6274,36,24,36
+C17.3726,36,12,30.6274,12,24 C12,17.3726,17.3726,12,24,12 Z" />
+    <path
+        android:fillColor="@color/AccentColor"
+        android:pathData="M40.152,18.1697 L43.473,18.1697 L43.473,18.1697
+C45.3072,18.1697,46.794,20.78,46.794,24
+C46.794,27.22,45.3071,29.8303,43.473,29.8303 L40.152,29.8303 L40.152,18.1698 Z" />
+
+    <group
+        android:rotation="180"
+        android:translateX="9"
+        android:translateY="48">
+        <path
+            android:fillColor="@color/AccentColor"
+            android:pathData="M1.18518,18.1697 L4.50621,18.1697 L4.50621,18.1697
+    C6.34037,18.1697,7.82724,20.78,7.82724,24
+    C7.82724,27.22,6.34036,29.8303,4.50621,29.8303 L1.18518,29.8303 L1.18518,18.1698
+    Z" />
+    </group>
+</vector>

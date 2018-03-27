@@ -36,25 +36,25 @@
 
             <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:orientation="vertical"
-                android:layout_gravity="center">
+                android:layout_gravity="center"
+                android:gravity="left|center">
 
                 <TextView
                     android:id="@+id/textview_total_fluids"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="@dimen/font_size_total_oil_lost_amount"
-                    android:textColor="@color/ColorPrimary"
-                    android:textStyle="bold"
-                    android:gravity="left"/>
+                    android:textColor="@color/AccentColor"
+                    android:includeFontPadding="false"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/total_lost_subheader"
                     android:textSize="@dimen/font_size_statistics_sub_text"
-                    android:gravity="left"
                     android:textColor="@color/TextSecondary" />
 
             </LinearLayout>
@@ -365,7 +365,7 @@
                     android:layout_height="wrap_content"
                     android:paddingTop="5dp"
                     android:textSize="@dimen/font_size_average_quarts_amount"
-                    android:textColor="@color/ColorPrimary"
+                    android:textColor="@color/AccentColor"
                     android:textStyle="bold"
                     android:gravity="left"/>
 
@@ -430,7 +430,7 @@
                     android:layout_height="wrap_content"
                     android:paddingTop="5dp"
                     android:textSize="@dimen/font_size_average_miles_amount"
-                    android:textColor="@color/ColorPrimary"
+                    android:textColor="@color/AccentColor"
                     android:textStyle="bold"
                     android:gravity="left"/>
 
