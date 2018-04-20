@@ -2,85 +2,34 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:layout_height="70dp"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingStart="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingEnd="@dimen/activity_horizontal_margin"
-    android:background="?selectableItemBackground">
+    android:layout_height="60dp">
 
-    <LinearLayout
-        android:layout_width="0dp"
-        android:layout_weight="1"
-        android:layout_height="match_parent"
-        android:gravity="left">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/textview_date"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="match_parent"
-            android:paddingLeft="7dp"
-            android:orientation="vertical"
-            android:gravity="center_vertical">
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:textColor="@color/TextSecondary"
+            android:textSize="@dimen/font_size_statistics_header"
+            android:gravity="center_vertical"/>
 
-            <TextView
-                android:id="@+id/textview_date_month"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/TextSecondary"
-                android:textSize="@dimen/font_size_list_item_header"
-                android:gravity="left" />
+        <TextView
+            android:id="@+id/textview_miles"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:textColor="@color/TextSecondary"
+            android:textSize="@dimen/font_size_statistics_header"
+            android:gravity="center" />
 
-            <TextView
-                android:id="@+id/textview_date"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/TextSecondary"
-                android:textSize="@dimen/font_size_list_item_sub_text"
-                android:gravity="left"/>
-
-        </LinearLayout>
-
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/textview_miles"
-        android:layout_width="0dp"
-        android:layout_weight="1"
-        android:layout_height="match_parent"
-        android:textColor="@color/TextSecondary"
-        android:textSize="@dimen/font_size_list_item_miles"
-        android:gravity="center" />
-
-    <LinearLayout
-        android:layout_width="0dp"
-        android:layout_weight="1"
-        android:layout_height="match_parent"
-        android:gravity="center">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/textview_amount"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/TextSecondary"
-                android:textSize="@dimen/font_size_list_item_header"
-                android:textStyle="bold"
-                android:gravity="center" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/TextSecondary"
-                android:textSize="@dimen/font_size_list_item_sub_text"
-                android:text="@string/list_item_log_quarts"
-                android:gravity="left"/>
-
-        </LinearLayout>
-
-    </LinearLayout>
+        <TextView
+            android:id="@+id/textview_amount"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:textSize="@dimen/font_size_statistics_header"
+            android:textColor="@color/TextSecondary"
+            android:gravity="center"/>
 
 </LinearLayout>

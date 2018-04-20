@@ -8,7 +8,7 @@
     <!-- Dimensions for the stats page so all the data is laid out correctly -->
     <dimen name="font_size_statistics_header">17sp</dimen>
     <dimen name="font_size_statistics_sub_text">16sp</dimen>
-    <dimen name="font_size_total_oil_lost_amount">60sp</dimen>
+    <dimen name="font_size_total_oil_lost_amount">56sp</dimen>
     <dimen name="font_size_average_quarts_amount">30sp</dimen>
     <dimen name="font_size_average_miles_amount">30sp</dimen>
 

@@ -129,7 +129,11 @@ public class PieGraph extends View {
         }
 
         paint.setColor(getResources().getColor(R.color.TextSecondary));
-        paint.setTextSize(getResources().getInteger(R.integer.stats_circle_text_size));
+
+
+        float scaledSizeInPixels = getResources().getInteger(R.integer.stats_circle_text_size) * getResources().getDisplayMetrics().scaledDensity;
+        //paint.setTextSize(getResources().getInteger(R.integer.stats_circle_text_size));
+        paint.setTextSize(scaledSizeInPixels);
         String text = amount + " / " + total;
         Rect bounds = new Rect();
         paint.getTextBounds(text, 0, text.length(), bounds);

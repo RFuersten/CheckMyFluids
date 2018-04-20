@@ -42,68 +42,8 @@ public class Log implements Parcelable{
         return mDate;
     }
 
-    public String getmDateDayYear() {
-        String parts[];
-
-        parts = mDate.split("/");
-
-        String day = parts[1];
-        String year = parts[2];
-
-        String temp;
-
-        switch(day){
-            case "01":
-                day = "1";
-                temp = "st";
-                break;
-            case "1":
-                temp = "st";
-                break;
-            case "02":
-                day = "2";
-                temp = "nd";
-                break;
-            case "2":
-                temp = "nd";
-                break;
-            case "03":
-                day = "3";
-                temp = "rd";
-                break;
-            case "3":
-                temp = "rd";
-                break;
-            case "04":
-                day = "4";
-                temp = "th";
-                break;
-            case "05":
-                day = "5";
-                temp = "th";
-                break;
-            case "06":
-                day = "6";
-                temp = "th";
-                break;
-            case "07":
-                day = "7";
-                temp = "th";
-                break;
-            case "08":
-                day = "8";
-                temp = "th";
-                break;
-            case "09":
-                day = "9";
-                temp = "th";
-                break;
-            default:
-                temp = "th";
-                break;
-        }
-
-        return day + temp + " " + year;
+    public String getmDateAsString(){
+        return getmDateMonth() + " " + getmDateDay() + "," + " " + getmDateYear();
     }
 
     public String getmDateMonth() {
@@ -116,28 +56,28 @@ public class Log implements Parcelable{
 
         switch (month) {
             case "01":
-                monthChar = "January";
+                monthChar = "Jan";
                 break;
             case "1":
-                monthChar = "January";
+                monthChar = "Jan";
                 break;
             case "02":
-                monthChar = "February";
+                monthChar = "Feb";
                 break;
             case "2":
-                monthChar = "February";
+                monthChar = "Feb";
                 break;
             case "03":
-                monthChar = "March";
+                monthChar = "Mar";
                 break;
             case "3":
-                monthChar = "March";
+                monthChar = "Mar";
                 break;
             case "04":
-                monthChar = "April";
+                monthChar = "Apr";
                 break;
             case "4":
-                monthChar = "April";
+                monthChar = "Apr";
                 break;
             case "05":
                 monthChar = "May";
@@ -146,43 +86,94 @@ public class Log implements Parcelable{
                 monthChar = "May";
                 break;
             case "06":
-                monthChar = "June";
+                monthChar = "Jun";
                 break;
             case "6":
-                monthChar = "June";
+                monthChar = "Jun";
                 break;
             case "07":
-                monthChar = "July";
+                monthChar = "Jul";
                 break;
             case "7":
-                monthChar = "July";
+                monthChar = "Jul";
                 break;
             case "08":
-                monthChar = "August";
+                monthChar = "Aug";
                 break;
             case "8":
-                monthChar = "August";
+                monthChar = "Aug";
                 break;
             case "09":
-                monthChar = "September";
+                monthChar = "Sep";
                 break;
             case "9":
-                monthChar = "September";
+                monthChar = "Sep";
                 break;
             case "10":
-                monthChar = "October";
+                monthChar = "Oct";
                 break;
             case "11":
-                monthChar = "November";
+                monthChar = "Nov";
                 break;
             case "12":
-                monthChar = "December";
+                monthChar = "Dec";
                 break;
         }
 
         return monthChar;
+    }
+
+    public String getmDateDay(){
+        String parts[];
+
+        parts = mDate.split("/");
+
+        String day = parts[1];
+
+        switch(day) {
+            case "01":
+                day = "1";
+                break;
+            case "02":
+                day = "2";
+                break;
+            case "03":
+                day = "3";
+                break;
+            case "04":
+                day = "4";
+                break;
+            case "05":
+                day = "5";
+                break;
+            case "06":
+                day = "6";
+                break;
+            case "07":
+                day = "7";
+                break;
+            case "08":
+                day = "8";
+                break;
+            case "09":
+                day = "9";
+                break;
+        }
+
+        return day;
 
     }
+
+    public String getmDateYear(){
+        String parts[];
+
+        parts = mDate.split("/");
+
+        String year = parts[2];
+
+        return year;
+    }
+
 
     public void setmDate(String mDate) {
         this.mDate = mDate;

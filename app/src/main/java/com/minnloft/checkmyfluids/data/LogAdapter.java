@@ -18,13 +18,11 @@ public class LogAdapter extends ArrayAdapter<Log> {
 
     //View lookup cache
     private static class ViewHolder {
-        TextView dateViewMonth;
         TextView dateView;
         TextView amountView;
         TextView milesView;
 
         public ViewHolder(View view) {
-            dateViewMonth = (TextView) view.findViewById(R.id.textview_date_month);
             dateView = (TextView) view.findViewById(R.id.textview_date);
             amountView = (TextView) view.findViewById(R.id.textview_amount);
             milesView = (TextView) view.findViewById(R.id.textview_miles);
@@ -60,8 +58,7 @@ public class LogAdapter extends ArrayAdapter<Log> {
         }
 
         //Populate the data into the template view using the data object
-        viewHolder.dateViewMonth.setText(log.getmDateMonth());
-        viewHolder.dateView.setText(log.getmDateDayYear());
+        viewHolder.dateView.setText(log.getmDateAsString());
         viewHolder.amountView.setText(log.getmAmount());
         viewHolder. milesView.setText(log.getmMiles());
 

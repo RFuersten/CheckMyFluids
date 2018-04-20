@@ -17,7 +17,7 @@
             <TextView
                 android:id="@+id/textview_no_logs"
                 android:layout_width="match_parent"
-                android:layout_height="70dp"
+                android:layout_height="60dp"
                 android:text="@string/no_coolant_logs_entered"
                 android:textColor="@color/TextSecondary"
                 android:textSize="@dimen/font_size_statistics_sub_text"

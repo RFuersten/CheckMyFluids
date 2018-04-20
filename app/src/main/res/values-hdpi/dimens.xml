@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Dimensions for the stats page so all the data is layed out correctly -->
+    <!-- Dimensions for the stats page so all the data is laid out correctly -->
     <dimen name="font_size_statistics_header">14sp</dimen>
     <dimen name="font_size_statistics_sub_text">13sp</dimen>
-    <dimen name="font_size_total_oil_lost_amount">47sp</dimen>
+    <dimen name="font_size_total_oil_lost_amount">43sp</dimen>
     <dimen name="font_size_average_quarts_amount">24sp</dimen>
     <dimen name="font_size_average_miles_amount">24sp</dimen>
 
     <!-- Dimensions for the stats page so all the data is laid out correctly -->
-    <dimen name="font_size_log_fluids_header">15sp</dimen>
+    <dimen name="font_size_log_fluids_header">14sp</dimen>
     <dimen name="font_size_list_item_header">18sp</dimen>
     <dimen name="font_size_list_item_sub_text">13sp</dimen>
     <dimen name="font_size_list_item_miles">15sp</dimen>
